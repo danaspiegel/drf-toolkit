@@ -83,7 +83,7 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="newspaper",
             constraint=models.CheckConstraint(
-                check=models.Q(("starts_at__lte", models.F("ends_at"))),
+                condition=models.Q(("starts_at__lte", models.F("ends_at"))),
                 name="newspaper_invalid_date_range",
             ),
         ),
@@ -102,7 +102,7 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="roomofrequirement",
             constraint=models.CheckConstraint(
-                check=models.Q(("starts_at__lte", models.F("ends_at"))),
+                condition=models.Q(("starts_at__lte", models.F("ends_at"))),
                 name="roomofrequirement_invalid_date_range",
             ),
         ),

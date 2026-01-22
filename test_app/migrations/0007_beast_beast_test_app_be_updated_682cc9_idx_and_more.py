@@ -43,6 +43,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AddConstraint(
             model_name="beast",
-            constraint=models.CheckConstraint(check=models.Q(("age__gte", 0)), name="minimum-beast-age"),
+            constraint=models.CheckConstraint(condition=models.Q(("age__gte", 0)), name="minimum-beast-age"),
         ),
     ]

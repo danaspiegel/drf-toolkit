@@ -270,7 +270,7 @@ class Beast(SoftDeleteModel):
     class Meta(BaseModel.Meta):
         constraints = [
             models.UniqueConstraint(fields=["name", "age"], name="single-beast-per-year"),
-            models.CheckConstraint(check=models.Q(age__gte=0), name="minimum-beast-age"),
+            models.CheckConstraint(condition=models.Q(age__gte=0), name="minimum-beast-age"),
         ]
 
 
