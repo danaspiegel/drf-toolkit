@@ -119,7 +119,7 @@ class InvalidRecord(DatabaseIntegrityError):
     def constraint_check(self) -> Q | None:
         for constraint in self.model._meta.constraints:
             if constraint.name == self.outcome:
-                return constraint.check
+                return constraint.condition
         return None
 
     def _parse_psql(self):
